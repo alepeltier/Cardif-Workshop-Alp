@@ -1,0 +1,145 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "d6871c17-e369-4f57-a259-a9ea166e5492": {
+        "id": "d6871c17-e369-4f57-a259-a9ea166e5492",
+        "parent": null,
+        "name": "Cardif-Workshop-Alp",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "4b9ac37f-1359-49e7-a831-3c4dd5699c5c"
+        ],
+        "isRemovable": false,
+        "filePath": "Cardif-Workshop-Alp"
+      },
+      "4b9ac37f-1359-49e7-a831-3c4dd5699c5c": {
+        "id": "4b9ac37f-1359-49e7-a831-3c4dd5699c5c",
+        "parent": "d6871c17-e369-4f57-a259-a9ea166e5492",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "Cardif-Workshop-Alp/lambda.js",
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1MessageAPIAlpsendMessagepost",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "57391f17-eb10-49aa-a252-134cad9c0973": {
+            "id": "57391f17-eb10-49aa-a252-134cad9c0973",
+            "name": "Test event",
+            "functionId": "4b9ac37f-1359-49e7-a831-3c4dd5699c5c",
+            "event": "{\n    \"message\": \"test\"\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      }
+    },
+    "rootNode": "d6871c17-e369-4f57-a259-a9ea166e5492",
+    "openFiles": [
+      "4b9ac37f-1359-49e7-a831-3c4dd5699c5c"
+    ],
+    "currentFileId": "4b9ac37f-1359-49e7-a831-3c4dd5699c5c",
+    "resources": {
+      "sqsmessageQueueAlp": {
+        "name": "sqsmessageQueueAlp",
+        "type": "SQS",
+        "config": {
+          "mode": 1,
+          "existing": true,
+          "name": "message-queue-alp",
+          "url": "https://sqs.us-east-1.amazonaws.com/301464955729/message-queue-alp",
+          "selectedRegion": "us-east-1",
+          "deliveryDelay": "0",
+          "deliveryDelayUnit": "seconds",
+          "queueType": "standardQueue",
+          "defaultVisibilityTimeout": "30",
+          "defaultVisibilityTimeoutUnit": "seconds",
+          "messageRetentionPeriod": "345600",
+          "messageRetentionPeriodUnit": "seconds",
+          "maximumMessageSize": 256,
+          "receiveMessageWaitTime": "0",
+          "queueARN": "arn:aws:sqs:us-east-1:301464955729:message-queue-alp"
+        }
+      },
+      "apigusEast1MessageAPIAlpsendMessagepost": {
+        "name": "apigusEast1MessageAPIAlpsendMessagepost",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 0,
+          "apiName": "MessageAPIAlp",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "sendMessage",
+          "resourcePath": "/sendMessage",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "test",
+          "mode": 0
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        },
+        "slappforge-sdk-aws": {
+          "name": "slappforge-sdk-aws",
+          "language": "javascript",
+          "version": "0.0.5",
+          "dev": false,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "Cardif-Workshop-Alp",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1581516255480
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "Cardif-Workshop-Alp",
+      "url": "https://github.com/alepeltier/Cardif-Workshop-Alp"
+    }
+  }
+}
